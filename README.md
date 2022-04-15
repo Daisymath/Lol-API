@@ -20,16 +20,20 @@ Then you need to run the following files in order.
 
 grab_summoners.py -> grab_puuids.py -> grab_matches.py -> grab_info.py
 
-<u>grab_summoners.py</u>
-This file grabs summoner id's for the given que, tier, and division(s).  These need to be defined in the file.  I have it set up to grab summoners in Gold IV - I,
+<strong>grab_summoners.py</strong>
 
-<u>grab_puuid.py</u>
+This file grabs summoner id's for the given que, tier, and division(s).  These need to be defined in the file.  I have it set up to grab summoners in Gold IV - I.
+
+<strong>grab_puuid.py</strong>
+
 This file takes in the summoner id's and grabs puuid's.  
 
-<u>grab_matches.py</u>
+<strong>grab_matches.py</strong>
+
 This file takes in the puuid's and pulls ranked match id's played by each player.  You need to choose the start time you are interested in.  It is in UNIX time and I have it currently set for about when patch 12.5 dropped.  I first set up the variable matches as a set since I expect to get many duplicates.  This is the converted to a list to save.
 
-<u>grab_info.py</u>
+<strong>grab_info.py</strong>
+
 This file takes in the match id's and pulls data from the match and match-timeline API's.  This means two calls for each match.  This is why they are broken into chunks of 50 at a time.  I set up a team_df that contains dictionaries for each time.  The keys represent information I was interested in pulling.  For each request, if the API status code is not 200 it is printed.  This way if something goes wrong you can see it!
 
 ## Link to Kaggle dataset example
