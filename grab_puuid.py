@@ -2,7 +2,16 @@ import requests
 import pickle
 import time
 
-api_key = "RGAPI-96387f00-a727-4058-9743-f1006ce239f3"
+api_key = ""
+
+#open api key file
+text_file = open("api_key.txt", "r")
+ 
+#read in api key
+api_key = text_file.read()
+ 
+#close file
+text_file.close()
 
 # Open summoner list:
 with open ('summoners.txt', 'rb') as fp:
@@ -26,14 +35,6 @@ for i in range(m):
     time.sleep(90)
         
 
-# puuids = []
-# for sum in summoners:
-#     temp_res = requests.get("https://na1.api.riotgames.com/lol/summoner/v4/summoners/"+ sum +"?api_key="+api_key)
-#     puuids.append(temp_res.json()["puuid"])
-
-
-# print(len(puuids))
-# print(puuids)
 
 with open('puuids.txt', 'wb') as fp:
         pickle.dump(puuids, fp)
