@@ -1,0 +1,19 @@
+# Ignore all text files
+
+*.txt
+
+# Ignore this folder
+
+.ipynb_checkpoints
+
+# Ignore all csv files
+
+*.csv
+
+# Ignore all json files
+
+*.jso
+
+# Ignore all python notebooks
+
+*.ipynb
